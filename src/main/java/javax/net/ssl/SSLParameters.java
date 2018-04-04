@@ -24,6 +24,13 @@ public final class SSLParameters {
 
     /**
      * Throws {@link AssertionError} always.
+     */
+    public SSLParameters(String[] cipherSuites) {
+        throw new AssertionError();
+    }
+
+    /**
+     * Throws {@link AssertionError} always.
      * 
      * @since 9
      */
