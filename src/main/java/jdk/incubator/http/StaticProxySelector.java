@@ -40,7 +40,7 @@ import java9.util.Lists;
  *
  * @since 9
  */
-final class StaticProxySelector extends ProxySelector {
+public final class StaticProxySelector extends ProxySelector {
 
    private static final List<Proxy> NO_PROXY_LIST = Lists.of(Proxy.NO_PROXY);
    final List<Proxy> list;
