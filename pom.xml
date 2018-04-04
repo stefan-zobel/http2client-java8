@@ -4,13 +4,19 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sourceforge.streamsupport</groupId>
     <artifactId>http2client-java8</artifactId>
-    <version>alpha1</version>
+    <version>alpha2-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
             <groupId>net.sourceforge.streamsupport</groupId>
             <artifactId>java9-concurrent-backport</artifactId>
-            <version>1.1.0</version>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.9.5</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
