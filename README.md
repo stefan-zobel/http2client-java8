@@ -14,11 +14,11 @@ of the HTTP client a backport of the Java 9 CompletableFuture is necessary as a 
 <dependency>
     <groupId>net.sourceforge.streamsupport</groupId>
     <artifactId>java9-concurrent-backport</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 </dependency>
 ```
 
-Logging is not functional yet. The code has seen very little testing and is still in development. Don't use this in production!
+Logging is not functional yet. The code hasn't been thoroughly tested so far, so don't use this in production!
 
 
 ## LICENSE
