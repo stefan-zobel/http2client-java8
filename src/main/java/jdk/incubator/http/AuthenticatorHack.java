@@ -14,7 +14,9 @@ import java.net.URL;
 import java.util.Objects;
 
 /**
- * XXX: needs testing!
+ * Reflection utility that emulates the logic of the
+ * {@code requestPasswordAuthenticationInstance()} method in
+ * {@link Authenticator} that has been introduced in Java 9.
  */
 final class AuthenticatorHack {
 
