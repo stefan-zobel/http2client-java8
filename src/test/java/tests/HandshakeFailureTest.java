@@ -66,7 +66,7 @@ public class HandshakeFailureTest {
     static final int TIMES = 10;
 
     public static void main() throws Exception {
-       realmain(null);
+        realmain(null);
     }
 
     private static void realmain(String[] args) throws Exception {

@@ -50,7 +50,7 @@ public class HttpRequestBuilderTest {
 
 
     public static void main() throws Exception {
-       realmain(null);
+        realmain(null);
     }
 
     private static void realmain(String[] args) throws Exception {
@@ -282,7 +282,7 @@ public class HttpRequestBuilderTest {
 
     @SafeVarargs
     private static boolean isExpected(Exception x,
-                                     Class<? extends Exception> ...expected) {
+                                      Class<? extends Exception> ...expected) {
         return expected != null && Stream.of(expected)
                 .filter(c -> c.isInstance(x))
                 .findAny().isPresent();

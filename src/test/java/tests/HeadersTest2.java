@@ -119,7 +119,7 @@ public class HeadersTest2 {
     };
 
     public static void main() {
-       realmain(null);
+        realmain(null);
     }
 
     private static void realmain(String[] args) {
