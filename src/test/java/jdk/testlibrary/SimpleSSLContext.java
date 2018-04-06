@@ -28,6 +28,8 @@ import java.security.*;
 import java.security.cert.*;
 import javax.net.ssl.*;
 
+import lib.SameDirectory;
+
 /**
  * Creates a simple usable SSLContext for SSLSocketFactory
  * or a HttpsServer using either a given keystore or a default
@@ -51,6 +53,10 @@ public class SimpleSSLContext {
      */
     public SimpleSSLContext() throws IOException {
         String paths = System.getProperty("test.src.path");
+        if (paths == null) {
+            paths = SameDirectory.getPath(SimpleSSLContext.class);
+            System.err.println("Using keystore fallback path: " + paths);
+        }
         StringTokenizer st = new StringTokenizer(paths, File.pathSeparator);
         boolean securityExceptions = false;
         while (st.hasMoreTokens()) {
@@ -78,7 +84,7 @@ public class SimpleSSLContext {
      * loads default keystore from given directory
      */
     public SimpleSSLContext(String dir) throws IOException {
-        String file = dir+"/testkeys";
+        String file = dir + "/testkeys";
         try (FileInputStream fis = new FileInputStream(file)) {
             init(fis);
         }
