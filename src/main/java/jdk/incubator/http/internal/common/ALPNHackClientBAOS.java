@@ -63,7 +63,11 @@ final class ALPNHackClientBAOS extends ByteArrayOutputStream {
                     newData = new byte[len];
                     System.arraycopy(b, off, newData, 0, len);
                 }
-                SSLEngineEx.regenerateHashes(sslEngine, this, sentClientHello, newData);
+                if (sentClientHello != null) {
+                    SSLEngineEx.regenerateHashes(sslEngine, this, sentClientHello, newData);
+                } else {
+                    System.err.println("WARN: missing client hello");
+                }
                 return;
             }
         }
