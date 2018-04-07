@@ -72,7 +72,7 @@ public class ProxyServer extends Thread implements Closeable {
      */
     public void close() throws IOException {
         if (debug) System.out.println("Proxy: closing");
-            done = true;
+        done = true;
         listener.close();
         for (Connection c : connections) {
             if (c.running()) {
