@@ -136,7 +136,7 @@ public class ProxyTest {
     }
 
     /**
-     * A Proxy Selector that wraps a ProxySelector.of(), and counts the number
+     * A Proxy Selector that wraps a StaticProxySelector.of(), and counts the number
      * of times its select method has been invoked. This can be used to ensure
      * that the Proxy Selector is invoked only once per HttpClient.sendXXX
      * invocation.
@@ -191,7 +191,7 @@ public class ProxyTest {
             Proxy p = new Proxy(Proxy.Type.HTTP,
                     InetSocketAddress.createUnresolved("localhost", proxy.getAddress().getPort()));
             System.out.println("Verifying communication with proxy");
-            HttpURLConnection conn = (HttpURLConnection)uri.toURL().openConnection(p);
+            HttpURLConnection conn = (HttpURLConnection) uri.toURL().openConnection(p);
             try (InputStream is = conn.getInputStream()) {
                 String resp = new String(readAllBytes(is), StandardCharsets.UTF_8);
                 System.out.println(resp);
@@ -251,7 +251,7 @@ public class ProxyTest {
 
         // Pipe the input stream to the output stream.
         private synchronized Thread pipe(InputStream is, OutputStream os, char tag) {
-            return new Thread("TunnelPipe("+tag+")") {
+            return new Thread("TunnelPipe(" + tag + ")") {
                 @Override
                 public void run() {
                     try {
