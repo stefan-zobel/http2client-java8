@@ -22,6 +22,14 @@ public final class SameDirectory {
         return null;
     }
 
+    public static String getPackagePath(Class<?> clazz) {
+        String path = getPath(clazz);
+        if (path != null) {
+            path += clazz.getPackage().getName().replace(".", "/");
+        }
+        return path;
+    }
+
     private SameDirectory() {
         throw new AssertionError();
     }
