@@ -18,7 +18,8 @@ of the HTTP client a backport of the Java 9 CompletableFuture is necessary as a 
 </dependency>
 ```
 
-Logging is not functional yet. The code hasn't been thoroughly tested so far, so don't use this in production!
+Logging is not functional yet. Most of the tests are working without resorting to daring gimmicks (but not all of them). Still too early
+for production use.
 
 
 ## LICENSE
