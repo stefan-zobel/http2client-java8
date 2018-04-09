@@ -259,7 +259,13 @@ public final class SSLEngineEx extends SSLEngine {
             HANDSHAKE_HASH_VERSION.set(hash, -1);
             HANDSHAKE_HASH_PROTOCOL_DETERMINED.invoke(hash, protocolVersion);
             MessageDigest digest = (MessageDigest) HANDSHAKE_HASH_FIN_MD.get(hash);
-            digest.reset();
+            if (digest != null) {
+                digest.reset();
+            } else {
+                // this path can only be reached for a few tests when we run
+                // on a Java 9 VM and we deliberately pretend that we run on
+                // a Java 8 VM even though we know that it's not true 
+            }
             for (byte[] bytes : hashBytes) {
                 HANDSHAKE_HASH_UPDATE.invoke(hash, bytes, 0, bytes.length);
             }

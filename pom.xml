@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sourceforge.streamsupport</groupId>
     <artifactId>http2client-java8</artifactId>
-    <version>beta2</version>
+    <version>rc1</version>
 
     <dependencies>
         <dependency>
