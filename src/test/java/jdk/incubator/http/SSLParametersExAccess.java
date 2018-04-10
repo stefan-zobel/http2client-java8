@@ -17,6 +17,16 @@ public final class SSLParametersExAccess {
         return sslParams;
     }
 
+    public static void setEnableRetransmissions(SSLParameters sslParams, boolean enableRetransmissions) {
+        if (!IS_JAVA8) {
+            setEnableRetrans(sslParams, enableRetransmissions);
+        }
+    }
+
+    public static boolean getEnableRetransmissions(SSLParameters sslParams) {
+        return true;
+    }
+
     private SSLParametersExAccess() {
         throw new AssertionError();
     }
@@ -29,17 +39,29 @@ public final class SSLParametersExAccess {
         }
     }
 
+    private static void setEnableRetrans(SSLParameters params, boolean enableRetransmissions) {
+        try {
+            ENABLE_RETRANS_SET.invoke(params, enableRetransmissions);
+        } catch (Exception e) {
+            throw new Error(e);
+        }
+    }
+
     private static final boolean IS_JAVA8 = isJava8();
     private static final Method APP_PROTOCOLS_SET;
+    private static final Method ENABLE_RETRANS_SET;
     static {
         try {
             if (!isJava8()) {
                 // assume it's Java 9 or higher
                 APP_PROTOCOLS_SET = SSLParameters.class.getDeclaredMethod("setApplicationProtocols", String[].class);
                 APP_PROTOCOLS_SET.setAccessible(true);
+                ENABLE_RETRANS_SET = SSLParameters.class.getDeclaredMethod("setEnableRetransmissions", boolean.class);
+                ENABLE_RETRANS_SET.setAccessible(true);
             } else {
                 // Java 8
                 APP_PROTOCOLS_SET = null;
+                ENABLE_RETRANS_SET = null;
             }
         } catch (Exception e) {
             throw new Error(e);
