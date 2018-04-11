@@ -66,7 +66,7 @@ import java9.util.concurrent.CompletableFuture;
  */
 abstract class AbstractAsyncSSLConnection extends HttpConnection
 {
-    private static final boolean IS_JAVA8 = isJava8();
+    private static final boolean IS_JAVA8 = Utils.isJava8();
     protected final SSLEngineEx engine;
     protected final String serverName;
     protected final SSLParametersEx sslParameters;
@@ -262,12 +262,4 @@ abstract class AbstractAsyncSSLConnection extends HttpConnection
         sb.append('\n');
         Log.logSSL(sb.toString(), params.toArray());
     }
-
-    private static boolean isJava8() {
-        try {
-            return "52.0".equals(System.getProperty("java.class.version"));
-        } catch (Exception ignore) {
-        }
-        return false;
-   }
 }

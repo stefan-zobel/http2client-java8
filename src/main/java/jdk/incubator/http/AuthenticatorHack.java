@@ -13,6 +13,8 @@ import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.util.Objects;
 
+import jdk.incubator.http.internal.common.Utils;
+
 /**
  * Reflection utility that emulates the logic of the
  * {@code requestPasswordAuthenticationInstance()} method in
@@ -78,7 +80,7 @@ final class AuthenticatorHack {
         }
     }
 
-    private static final boolean IS_JAVA8 = isJava8();
+    private static final boolean IS_JAVA8 = Utils.isJava8();
     private static final sun.misc.Unsafe U = UnsafeAccess.unsafe;
     private static final Method RESET;
     private static final Method PWD_AUTH_GET;
@@ -108,13 +110,5 @@ final class AuthenticatorHack {
         } catch (Exception e) {
             throw new Error(e);
         }
-    }
-
-    private static boolean isJava8() {
-        try {
-            return "52.0".equals(System.getProperty("java.class.version"));
-        } catch (Exception ignore) {
-        }
-        return false;
     }
 }

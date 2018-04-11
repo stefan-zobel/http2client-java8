@@ -13,6 +13,9 @@ import java.util.Objects;
 
 import javax.net.ssl.SNIMatcher;
 import javax.net.ssl.SSLParameters;
+
+import jdk.incubator.http.internal.common.Utils;
+
 import javax.net.ssl.SNIServerName;
 
 /**
@@ -258,7 +261,7 @@ final class SSLParametersEx {
         }
     }
 
-    private static final boolean IS_JAVA8 = isJava8();
+    private static final boolean IS_JAVA8 = Utils.isJava8();
     private static final Method ENABLE_RETRANS_SET;
     private static final Method ENABLE_RETRANS_GET;
     private static final Method MAX_PACKSIZE_SET;
@@ -293,13 +296,5 @@ final class SSLParametersEx {
         } catch (Exception e) {
             throw new Error(e);
         }
-    }
-
-    private static boolean isJava8() {
-        try {
-            return "52.0".equals(System.getProperty("java.class.version"));
-        } catch (Exception ignore) {
-        }
-        return false;
     }
 }

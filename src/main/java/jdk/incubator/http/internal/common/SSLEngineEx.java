@@ -494,7 +494,7 @@ public final class SSLEngineEx extends SSLEngine {
         }
     }
 
-    private static final boolean IS_JAVA8 = isJava8();
+    private static final boolean IS_JAVA8 = Utils.isJava8();
     // Java 8
     private static final Field HANDSHAKER;
     private static final Field HANDSHAKER_PROTOCOL_VERSION;
@@ -565,13 +565,5 @@ public final class SSLEngineEx extends SSLEngine {
             HANDSHAKE_HASH_FIN_MD = null;
             HANDSHAKER_PROTOCOL_VERSION = null;
         }
-    }
-
-    private static boolean isJava8() {
-        try {
-            return "52.0".equals(System.getProperty("java.class.version"));
-        } catch (Exception ignore) {
-        }
-        return false;
     }
 }
