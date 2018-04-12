@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sourceforge.streamsupport</groupId>
     <artifactId>http2client-java8</artifactId>
-    <version>rc2</version>
+    <version>0.1.0</version>
 
     <dependencies>
         <dependency>
@@ -77,8 +77,7 @@
                             </sourceFileExcludes>
                             <offlineLinks>
                                 <offlineLink>
-                                    <!-- TODO: change to the correct java9-concurrent-backport javadoc.io URL once this is online -->
-                                    <url>https://static.javadoc.io/net.sourceforge.streamsupport/android-retrofuture/1.6.1/</url>
+                                    <url>https://stefan-zobel.github.io/java9-concurrent-backport/apidocs/</url>
                                     <location>./../../../java9-concurrent-backport/target/apidocs/</location>
                                 </offlineLink>
                             </offlineLinks>

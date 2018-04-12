@@ -21,8 +21,8 @@ of the HTTP client a backport of the Java 9 CompletableFuture is necessary as a 
 Status:
 
 * Logging is not functional yet
-* Most of the tests are working without resorting to daring gimmicks (but some need them)
-* Ready for use by more adventurous devs
+* Almost all of the tests are working now without resorts to daring gimmicks
+* Ready to use by the more adventurous developer
 
 
 ## LICENSE
