@@ -4,7 +4,29 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.sourceforge.streamsupport</groupId>
     <artifactId>http2client-java8</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
+    <name>net.sourceforge.streamsupport:http2client-java8</name>
+    <description>Experimental Java 8 backport of the incubating Java 10 HTTP/2 and WebSocket API</description>
+    <url>https://github.com/stefan-zobel/http2client-java8/</url>
+    <licenses>
+        <license>
+            <name>GNU General Public License, version 2, with the Classpath Exception</name>
+            <url>http://openjdk.java.net/legal/gplv2+ce.html</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Stefan Zobel</name>
+            <email>Spliterator@gmail.com</email>
+            <organization>net.sourceforge.streamsupport</organization>
+            <organizationUrl>https://github.com/stefan-zobel/</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <url>https://github.com/stefan-zobel/http2client-java8</url>
+        <connection>scm:git:https://github.com/stefan-zobel/http2client-java8.git</connection>
+        <developerConnection>scm:git:https://github.com/stefan-zobel/http2client-java8.git</developerConnection>
+    </scm>
 
     <dependencies>
         <dependency>
